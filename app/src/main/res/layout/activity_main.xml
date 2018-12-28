@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+    <!--此处定义该布局要用到的数据的名称及类型-->
+    <variable
+        name="user"
+        type="com.example.administrator.mvvmframwork.User"/>
+    <variable
+        name="field"
+        type="com.example.administrator.mvvmframwork.UserField"/>
+    <!--<import type="com.example.administrator.mvvmframwork.User" alias="typeUser"/>-->
+    <!--<variable-->
+    <!--name="user"-->
+    <!--type="typeUser"/>-->
+</data>
+    <!--此处按照常规方式定义要使用的布局，其中可以使用binding表达式代表属性值，所谓binding表达式，指形如"@{user.firstName}"的表达式-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:header="@{user.header}"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{`    `+field.name}"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{``+  field.password}"
+            />
+    </LinearLayout>
+
+</layout>
+
